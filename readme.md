@@ -14,7 +14,8 @@
 
 Before you begin, ensure you have met the following requirements:
 Windows:
-
+- Clone develop branch to your local machine
+- 
 - Open the project by Visual Studio 2019
 
 - Open the Web config in the "SearchTool" project to set value for the Following info below:
