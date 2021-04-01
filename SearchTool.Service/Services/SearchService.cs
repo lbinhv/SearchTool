@@ -39,7 +39,7 @@ namespace SearchTool.Service.Services
                         row = new SearchDataModel
                         {
                             Id = splits[0],
-                            Content = splits[1].Substring(0, 300),
+                            Content = $"{splits[1].Substring(0, 300)}.....",
                             SearchTime = searchTime.Elapsed.TotalMilliseconds.ToString()
                         };
                         searchData.Add(row);

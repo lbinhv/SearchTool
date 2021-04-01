@@ -3,7 +3,7 @@
     Layout = "~/Views/Shared/_HomeLayout.cshtml";
 }
 
-<div class="row templatemo_main">
+<div class="row content_main">
     <div id="home" class="main_box">
         <h1>Simple Search Tool</h1>
         <p>
@@ -45,7 +45,6 @@
 
 @section PluginScripts {
     @Scripts.Render("~/bundles/homepage")
-    @*<script src="@Url.Content("~/Scripts/pages/homepage.js")" asp-append-version="true"></script>*@
 }
 
 @section Scripts {
@@ -53,7 +52,6 @@
         $(document).ready(function () {
             HOMEPAGE.url_create_csv = "@Url.Action("CreateCsv", "Home")";
             HOMEPAGE.url_search = "@Url.Action("GetSeachValue", "Home")";
-            //TOUR.url_edit = "@Url.Action("Update", "Tour")";
             HOMEPAGE.init_page();
         });
     </script>
