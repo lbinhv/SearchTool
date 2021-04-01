@@ -167,6 +167,7 @@
     <Content Include="Images\icon_home.png" />
     <Content Include="Images\icon_home_hover.png" />
     <Content Include="Images\background.png" />
+    <Content Include="Images\spinner.gif" />
     <Content Include="Scripts\datatables.min.js" />
     <Content Include="Scripts\toastr.min.js" />
     <Content Include="Content\bootstrap.css" />
