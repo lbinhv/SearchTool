@@ -14,6 +14,7 @@
 
 Before you begin, ensure you have met the following requirements:
 Windows:
+- Clone the develop branch
 
 - Open the project by Visual Studio 2019
 
