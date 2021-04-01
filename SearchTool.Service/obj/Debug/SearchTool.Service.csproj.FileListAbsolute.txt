@@ -1,0 +1,6 @@
+D:\LEARNINGS\Technical\BestPratices\SearchTool\SearchTool.Service\bin\Debug\SearchTool.Service.dll
+D:\LEARNINGS\Technical\BestPratices\SearchTool\SearchTool.Service\bin\Debug\SearchTool.Service.pdb
+D:\LEARNINGS\Technical\BestPratices\SearchTool\SearchTool.Service\obj\Debug\SearchTool.Service.csprojAssemblyReference.cache
+D:\LEARNINGS\Technical\BestPratices\SearchTool\SearchTool.Service\obj\Debug\SearchTool.Service.csproj.CoreCompileInputs.cache
+D:\LEARNINGS\Technical\BestPratices\SearchTool\SearchTool.Service\obj\Debug\SearchTool.Service.dll
+D:\LEARNINGS\Technical\BestPratices\SearchTool\SearchTool.Service\obj\Debug\SearchTool.Service.pdb
