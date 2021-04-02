@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 using SearchTool.Service.Services;
 using System.Web.Mvc;
+using SearchTool.Mapping.Infrastructure;
 
 namespace SearchTool.App_Start
 {
@@ -30,6 +31,11 @@ namespace SearchTool.App_Start
                     .AsImplementedInterfaces().InstancePerRequest();
 
                 builder.RegisterFilterProvider();
+
+                //Register AutoMapper here using AutoFacModule class (Both methods works)
+                //builder.RegisterModule(new AutoMapperModule());
+                builder.RegisterModule<AutoFacModule>();
+
                 IContainer container = builder.Build();
                 DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
             };
