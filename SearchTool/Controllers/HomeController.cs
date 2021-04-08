@@ -1,8 +1,10 @@
-﻿using SearchTool.Helpers;
+﻿using AutoMapper;
+using SearchTool.Helpers;
 using SearchTool.Models;
 using SearchTool.Service.Interfaces;
 using SearchTool.Service.Models;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Configuration;
@@ -18,14 +20,16 @@ namespace SearchTool.Controllers
         private readonly string _folderUrl;
         private readonly string _fileName;
         private readonly string _delimiter;
+        private readonly IMapper _mapper;
         #endregion
 
         #region Contructor
         public HomeController(IFileService fileService,
-            ISearchService searchService)
+            ISearchService searchService, IMapper mapper)
         {
             this._fileService = fileService;
             this._searchService = searchService;
+            _mapper = mapper;
             _folderUrl = WebConfigurationManager.AppSettings[Const.FolderPath];
             _fileName = WebConfigurationManager.AppSettings[Const.FileName];
             _delimiter = WebConfigurationManager.AppSettings[Const.Delimiter];
@@ -107,18 +111,13 @@ namespace SearchTool.Controllers
                 var searchResult = await _searchService.GetSearchData($"{_folderUrl}{_fileName}", searchValue, char.Parse(_delimiter));
 
                 //Parsing Model to View Model
-                var data = searchResult.Select(m => new SearchResultViewModel
-                {
-                    Id = m.Id,
-                    Content = m.Content,
-                    SearchTime = m.SearchTime
-                });
+                var model = _mapper.Map<List<SearchResultViewModel>>(searchResult);
 
                 return await Task.FromResult(Json(new
                 {
                     draw = true,
                     recordsTotal = searchResult.Count,
-                    data = data
+                    data = model
                 }, JsonRequestBehavior.AllowGet));
             }
             catch (Exception ex)
